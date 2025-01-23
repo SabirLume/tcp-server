@@ -19,7 +19,7 @@ const tcpServer = net.createServer((socket) => {
 })
 
 tcpServer.on('error', (err) => {
-  console.log('error with tcp server', err.message)
+  console.error('error with tcp server', err.message)
 })
 
 tcpServer.listen(port, () => {
@@ -55,7 +55,7 @@ const httpProxy = (data, socket) => {
     })
 
     res.on('error', (e) => {
-      console.log("There was an error in the proxy", e.message)
+      console.error("There was an error in the proxy", e.message)
     })
   })
 
